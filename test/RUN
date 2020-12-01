@@ -1,0 +1,16 @@
+#!/bin/csh
+
+
+set Start='1'
+set i='1'
+set End='2'
+
+ while ($Start <= $End)
+    set SUFFIX='Input-'$Start
+    echo $SUFFIX
+    ./GenDNAcoord.x $SUFFIX
+    ./run.py
+    mv cartesian.dat 'Out-'$Start'.xyz'
+    @ Start+= $i
+ end
+
